@@ -45,7 +45,7 @@ $(function(){
 
     $(".table_hover_list1").mouseenter(function(){
         if($(this).hasClass('on')){
-            flag = $(this).attr("class").replace("color_1","").replace("color_2","").replace("color_3","").replace("color_4","").replace("on","").replace("off","").replace("table_hover_list1","").replace(/ /g,"").replace("right_last","");
+            flag = $(this).attr("class").replace("color_1","").replace("color_2","").replace("color_3","").replace("color_4","").replace("on","").replace("off","").replace("table_hover_list1","").replace(/ /g,"").replace("right_last","").replace("bor_both","").replace("bor_right","");
             console.log(flag)
             $(this).css({display:"none"});
             $(this).parent("tr").children("td.off."+flag).css({display:"table-cell"});
