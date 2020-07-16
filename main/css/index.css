@@ -88,8 +88,10 @@ img{vertical-align: middle; max-width: 100%;}
 .agree_box span,.agree_box label,.agree_box a{height: 45px; line-height: 45px; display: inline-block; vertical-align: middle;}
 .agree_box label{margin: 0 5px 0 20px;}
 .agree_box a{font-size: 14px; color: #999;}
-.board_write{float:right;}
+.board_write{position: absolute; top: 0; right: 0;}
 .paging .board_write a{border:1px solid #545454; width:110px; height:40px; line-height: 40px;}
+.paging{text-align: center;position: relative;}
+.paging a{text-align: center;}
 #header{height: 75px; background-color: #313131; width: 100%; line-height: 75px; position: fixed; top: 0; left: 0; z-index: 99;font-family: "Noto Sans KR", sans-serif;}
 #header .logo{width: 310px; float: left; margin-left:32px;}
 #header .h_nav_outer{float: right;}
@@ -115,8 +117,9 @@ img{vertical-align: middle; max-width: 100%;}
 
 #main_sec,#sub_sec{margin-top: 75px; text-align: center;}
 .swiper-slide{background: linear-gradient(#392367, #321b4e);}
-.main01_slider a{position: absolute; bottom: 80px; right: 30px; z-index: 9; width: 175px; height: 45px; line-height: 45px; color: #fff; font-size: 18px; text-align: center; display: block; background: url(../img/main01_btn_bg.png) no-repeat center; box-shadow: 5px 5px 10px #000; border-radius: 23px;}
-.main01_slider .main01_text_bg{position: absolute; bottom: 30px; right: 30px;}
+.main01_slider a{position: absolute; bottom: 52px; right: 30px; z-index: 9; width: 175px; height: 45px; line-height: 45px; color: #fff; font-size: 18px; text-align: center; display: block; background: url(../img/main01_btn_bg.png) no-repeat center; box-shadow: 0px 5px 10px #000; border-radius: 23px;}
+.main01_slider a.slider_btn{right: 220px;background: url(../img/main01_btn2_bg.png) no-repeat center; box-shadow: 0px 5px 10px #000; border-radius: 23px; width: 109px;}
+.main01_slider .main01_text_bg{position: absolute; top: 40px; right: 30px;}
 .main01_slider .swiper-pagination{bottom: 30px !important;}
 .main01_slider .swiper-pagination-bullet{width: 12px; height: 12px; background-color: #b0b0b0; opacity: 1; margin: 0 7.5px !important;}
 .main01_slider .swiper-pagination-bullet-active{background-color: #9466ff; position: relative;}
@@ -238,6 +241,8 @@ div.line{width: 100%; height: 10px; background-color: #f3f3f3;margin: 30px 0;}
 .color_2{background-color: #ecf1ff;}
 .color_3{background-color: #f3fbf1;}
 .color_4{background-color: #fffcea;}
+.hover_title{color: #000 !important; display: block; width: auto; padding: 5px 15px; margin-bottom: 10px;}
+.hover_title span.span_color{color: #999 !important;}
 
 .apply_box{text-align: left; color: #828282; font-size: 17px; width: 1280px; margin: 20px auto; font-weight: 300; font-family: "Noto Sans KR", sans-serif; display: none; margin-bottom: 75px;}
 .apply_box.on{display: block;}
@@ -369,6 +374,23 @@ div.line{width: 100%; height: 10px; background-color: #f3f3f3;margin: 30px 0;}
 
 .event_01_list{width:1280px; margin:0 auto;}
 
+.gallay_list,.gallay2_list{border-top: 2px solid #000; text-align: left;}
+.gallay_list ul{font-size: 0;}
+.gallay_list li{margin: 28px 0;display: inline-block; margin-right: 40px; vertical-align: top; width: 400px;}
+.gallay_list li:nth-child(3n+3){margin-right: 0;}
+.gallay_list li .gallay_img{height: 250px; position: relative; overflow: hidden;}
+.gallay_list li img{position: absolute; top: 50%; transform: translateY(-50%);}
+.gallay_list li .gallay_text{padding: 20px 0; text-align: center; font-size: 20px; color: #333;}
+
+.gallay2_list ul{font-size: 0;}
+.gallay2_list li{padding: 28px 70px 35px; border-bottom: 1px solid #c2c2c2;}
+.gallay2_list li .gallay2_img, .gallay2_list li .gallay2_text{display: inline-block; font-size: 16px; vertical-align: middle;}
+.gallay2_list li .gallay2_img{width: 370px;}
+.gallay2_list li .gallay2_text{width: 770px; vertical-align: top;padding-left: 45px;}
+.gallay2_list li .gallay2_text .gal_subject{font-size: 20px; color: #333; line-height: 30px;}
+.gallay2_list li .gallay2_text .gal_content{font-size: 15px; color: #555; line-height: 24px; letter-spacing: -1px;margin-top: 20px;}
+.gallay2_list li .gallay2_text .gal_date{font-size: 14px; color: #888; margin-top: 20px; display: block;}
+
 /*푸터*/
 .footer{padding:50px 0 100px; text-align:center;}
 .footer .sns{margin-bottom:30px;}
@@ -378,6 +400,10 @@ div.line{width: 100%; height: 10px; background-color: #f3f3f3;margin: 30px 0;}
 .footer li:nth-child(3) p{font-size:12px; margin:10px 0}
 .footer li:last-child{color: #cacaca; font-size:12px; margin-top: 25px;}
 .footer li a{color: #cacaca; font-size:12px;}
+
+
+
+
 @media screen and (max-width: 1400px){
 .container{width:1400px}
 #header{width:1400px;right:0;position:absolute;}

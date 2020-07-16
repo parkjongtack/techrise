@@ -63,7 +63,7 @@ $(function(){
 		$(this).children("p").show();
 	});
 
-	$(".news_pop").click(function(){
+	$(".news_pop_alert").click(function(){
         $(".pop_bg").toggle();
     });
     $(".news_pop_outer .close").click(function(){
