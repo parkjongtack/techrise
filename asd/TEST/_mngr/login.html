@@ -1,0 +1,169 @@
+<% @LANGUAGE='VBSCRIPT' CODEPAGE='65001' %>
+<%
+Option Explicit
+Response.CharSet = "utf-8"
+%>
+<object Runat="Server" Progid="ADODB.Connection" id="dbCon"></object>
+<object Runat="Server" Progid="ADODB.RecordSet" id="rs"></object>
+<!-- #include virtual="/common/inc/noCache.asp" -->
+<!-- #include virtual="/_mngr/_inc/func.asp" -->
+<!-- #include virtual="/common/inc/base64.asp" -->
+<!-- #include virtual="/common/inc/dbCon.asp" -->
+<!-- #include virtual="/_mngr/_inc/ad_config_inc.asp" -->
+<%
+
+
+Dim userid, userpwd, saveid, goUrl
+userid  = Trim(request.form("userid"))
+userpwd = Trim(request.form("userpwd"))
+saveid  = request.form("saveid")
+goUrl   = Trim(request.form("goUrl"))
+
+Dim referUrl, reUrl
+referUrl = request.serverVariables("HTTP_REFERER")
+reUrl    = request("goUrl")
+if isEmptyStr(reUrl) then
+    reUrl = "/_mngr/?menu=SL"
+end if
+
+
+' �α��� ó�� ------------------------------------------------------------------
+if not isEmptyStr(userid) and not isEmptyStr(userpwd) and not isEmptyStr(referUrl) then
+    if saveid="on" then  ' userid ��Ű�� ����
+        response.cookies("saveAutoID") = userid
+        response.cookies("saveAutoID").expires = Date + 1000
+    else
+        response.cookies("saveAutoID").expires = Date - 1000
+    end if
+
+		if userid="tryadmin" and userpwd="xmfkdlrhksfl20@)" then  
+        response.Cookies("AD_userID") = base64Encode(userid)
+        response.Cookies("AD_userLV") = base64Encode(5)
+        response.Cookies("AD_userHR") = base64Encode(Year(now) & Calc(Month(now),2) & Calc(Day(now),2) & Calc(Hour(now),2) & Calc(Minute(now),2))
+        
+        if not isEmptyStr(goUrl) then
+            goUrl = Replace(goUrl,"/index.html","/")
+        else
+				    goUrl = "/_mngr/"
+        end if
+				
+				
+				response.redirect goUrl
+        
+    else
+        response.clear()
+        call Alert("아이디 또는 비밀번호가 일치 하지 않습니다.",-1)
+        response.end
+    end if
+else
+   
+    call logOutCompulsion()
+end if
+' ------------------------------------------------------------------------------
+
+
+' Log-out ----------------------------------------------------------------------
+Dim loginMode
+loginMode = Lcase(Trim(request("loginMode")))
+
+if loginMode="logout" then
+    call logOutCompulsion()
+    response.redirect "/_mngr/"
+    response.end
+end if
+' ------------------------------------------------------------------------------
+%>
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="/_mngr/_css/style.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/javascript">
+<!--
+function checkForm(form) {
+    if (!form.userid.value) {
+        alert('아이디를 입력하세요'); form.userid.focus(); return false;
+    }
+    if (!form.userpwd.value) {
+        alert('비밀번호를 입력하세요'); form.userpwd.focus(); return false;
+    }
+    
+    form.method = 'post';
+    form.action = 'login.html';
+    form.submit();
+}
+
+function loginFocus() {
+    if (!document.loginForm.userid.value) {
+        document.loginForm.userid.focus();
+    } else {
+        document.loginForm.userpwd.focus();
+    }
+}
+//-->
+</script>
+<title><%=titleTxt%></title>
+<body  leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onload="loginFocus();">
+<div id="container">
+  <div id="navigation">
+    <div id="leftDiv"></div>
+  </div>
+  <div id="loginParentDiv" ><div id="firstLoginDiv" >
+  
+  <table  width="700" border="0" cellpadding="0" cellspacing="0" align="center">
+  <tr>
+    <td>
+      <div class="popContentDiv">
+      <table  width="700" border="0" cellpadding="0" cellspacing="0"  align="center">
+        <tr>
+          <td>
+      
+            <form name="loginForm" onSubmit="return checkForm(this);">
+            <input type="hidden" name="goUrl" value="<%=reUrl%>">
+            <table  border="0" align="center" cellpadding="0" cellspacing="6">
+            
+              <tr>
+                <td width="120" height="46" ></td>
+                <td colspan="2" class="sub_title_02"><%=titleTxt%></td>
+              </tr>
+              
+              <tr>
+                <td colspan="3">&nbsp;</td>
+              </tr>
+              
+              <tr>
+                <td width="120" height="46" class="sub_title_01">User ID </td>
+                <td width="240" ><input name="userid" type="text" class="basic" value="<%=request.cookies("saveAutoID")%>" tabIndex="1"  style="font-size: 14px; font-weight: normal; height:30px; width:200px; padding-left:10px;" id="userID" /></td>
+                <td  rowspan="2"  style="padding-top:5px;"><input type="image" src="/_mngr/_img/btn_login_01.gif" border="0" tabIndex="3" style="cursor:pointer;" /></td>
+              </tr>
+              <tr>
+                <td class="sub_title_01">Password</td>
+                <td><input name="userpwd" type="password" style="height:30px; width:200px; padding-left:10px;"   tabIndex="2"  class="basic" id="userpwd" /></td>
+              </tr>
+               
+               <tr>
+                <td class="sub_title_01" style="padding-top:10px;">&nbsp;</td> 
+                <td colspan="2" style="padding-top:15px;">
+                <input type="checkbox" name="saveid" <% if not isEmptyStr(request.cookies("saveAutoID")) then %>checked<% end if %>> save user id
+                </td>
+               </tr>   
+            </table>
+            </form>
+           
+          </td>
+        </tr>
+      </table>  
+      </div>
+    </td>
+  </tr>  
+  <!-- <tr>
+    <td style="padding-top:15px;" align="right">Lost your password?</td>
+  </tr>  --> 
+    
+</table>
+  </div></div> 
+</div> 
+
+</body>
+</html>

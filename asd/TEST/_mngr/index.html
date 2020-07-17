@@ -1,0 +1,154 @@
+<% @LANGUAGE='VBSCRIPT' CODEPAGE='65001' %>
+<%
+Option Explicit
+Response.CharSet = "utf-8"
+%>
+<object Runat="Server" Progid="ADODB.Connection" id="dbCon"></object>
+<object Runat="Server" Progid="ADODB.RecordSet" id="rs"></object>
+<!-- #include virtual="/common/inc/noCache.asp" -->
+<!-- #include virtual="/_mngr/_inc/func.asp" -->
+<!-- #include virtual="/common/inc/base64.asp" -->
+<!-- #include virtual="/common/inc/dbCon.asp" -->
+<!-- #include virtual="/_mngr/_inc/ad_config_inc.asp" -->
+<%
+Call setSslPage()
+Call isAdminChk(1)
+Session.Timeout=60
+%>
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="/_mngr/_css/style.css" rel="stylesheet" type="text/css">
+<link href="/_mngr/_css/buttonStyle.css" rel="stylesheet" type="text/css">
+<link href="/_mngr/_css/calendar.css" rel="stylesheet" type="text/css">
+<script src="/common/js/jquery-2.1.3.min.js"></script>
+<script src="/common/js/availableChk.js"></script>
+<!-- #include virtual="/common/inc/modal.asp" -->
+
+<script type="text/JavaScript">
+<!--
+/* function MM_openBrWindow(theURL,winName,features) { //v2.0
+    aa=window.open(theURL,winName,features);
+    aa.focus();
+}
+
+function downloadFile_bak(menu, cate, mode, query) {
+    document.location.href = 'filedownload.asp?menu='+menu+'&category='+cate+'&listMode='+mode+'&query='+query;
+}
+
+function downloadFile(menu, cate, mode, query,listMode,orderStr) {
+    
+    document.location.href = 'filedownload.asp?menu='+menu+'&category='+cate+'&downmode='+mode+'&query='+query+'&downlistMode='+listMode+"&orderStr="+orderStr;
+}
+
+
+
+function checkboxAll(fn) {
+    var form = fn.form;
+    if (fn.checked==true) {
+        for (var i=0; i<form.editNum.length; i++) {
+            form.editNum[i].checked = true;
+        }
+    } else {
+        for (var i=0; i<form.editNum.length; i++) {
+            form.editNum[i].checked = false;
+        }
+    }
+}
+
+function goSendMailForm(fm,em) {
+    var winWidth = 700;
+		var winHeight = 570;
+		var x = screen.width/2 - winWidth/2;
+    var y = screen.height/2 - winHeight/2;
+    var url = 'mail/mailForm.asp?fromEmail='+fm+'&userEmail='+em;
+
+		var sendMailForm = window.open(url,'sendMailForm','left='+ x +',top='+ y +',width='+ winWidth +', height='+ winHeight +', scrollbars=yes')
+    sendMailForm.focus();
+} */
+
+
+var changeCount;
+changeCount = 0;
+
+function preloadhan(){
+    if(changeCount>0){
+		    location.reload()
+		}
+}
+
+
+function userLogin(uID,uPWD) {
+    var form = document.loginForm;
+		form.userID.value = uID;
+		form.action = '/signup/login_proc.html';
+		form.method = 'post';
+		form.target = '_blank';
+		form.submit();
+}
+
+
+var changeCount;
+changeCount = 0;
+
+function preloadhan(){
+    if(changeCount>0){
+		    alert("파일 등 주요 정보 변경 시\n\n상세 페이지를 다시 호출한 후 변경 내용을 확인해 주세요.")
+		    location.reload()
+		}
+}
+
+
+
+function goListUp(n,linkUrl) {
+    if (n) {
+       document.location.href="?"+linkUrl+"&listViewCnt="+n;
+    }
+}
+
+
+function goDownLoad(downUrl) {
+   document.downloadQryForm.action=downUrl;
+   document.downloadQryForm.submit();
+}
+
+//-->
+</script>
+<title><%=titleTxt%></title>
+
+<body  leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<div id="noneDiv"></div>  
+<div id="container">
+  
+  <div id="navigation">
+    <div id="leftDiv"><!-- #include virtual="/_mngr/_inc/leftMenu.asp" --></div>
+  </div>
+  
+  <div id="cont">
+    <div id="contSub">
+		
+		
+		<%call includeMainExeFile() %>
+		
+    </div>
+  </div>    
+</div> 
+
+
+<form name="loginForm">
+<input type="hidden" name="userID" value="">
+<input type="hidden" name="userFrom" value="M">
+<input type="hidden" name="logOption" value="Login">
+<input type="hidden" name="logonType" value="admin">
+<input type="hidden" name="requestUrl" value="/mypage/mypage.html">
+</form>
+<%if request.ServerVariables("REMOTE_ADDR")="116.36.59.221" then%>
+<iframe name="procFrame" id="procFrame" style="width:1000px;"></iframe> 
+<%else%>
+<iframe name="procFrame" id="procFrame" style="display:none;width:0px;"></iframe> 
+<%end if%>
+</body>
+</html>
+	

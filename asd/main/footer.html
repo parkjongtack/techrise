@@ -1,0 +1,38 @@
+<div class="footer" style="margin-top: 50px;">
+            <img src="img/footer.png" alt="">
+        </div>
+    </div>
+    <script>
+        $(function(){
+            var idx;
+            $(".event_01_hover_lsit div").hover(function(){
+                idx = $(this).index();
+                $(".event_01_hover_lsit div img").eq(idx).attr("src","img/event_01_list"+(idx+1)+"_on.png")
+            },function(){
+                $(".event_01_hover_lsit div img").eq(idx).attr("src","img/event_01_list"+(idx+1)+"_off.png")
+            });
+        });
+        var swiper = new Swiper('.main01_slider', {
+          slidesPerView: 1,
+          spaceBetween: 0,
+          loop: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+        });
+    </script>
+    <script>
+        var swiper = new Swiper('.main04_slider', {
+          slidesPerView: 5,
+          slidesPerColumn: 2,
+          spaceBetween: 40,
+          loop: true,
+          navigation: {
+          nextEl: '.main04_next',
+          prevEl: '.main04_prev',
+        },
+        });
+      </script>
+</body>
+</html>

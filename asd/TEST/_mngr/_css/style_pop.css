@@ -1,0 +1,287 @@
+body,td,th {
+	font-family: Verdana, µ∏¿Ω; 
+	font-size: 12px;
+	LINE-HEIGHT: 18px;
+	color: #333333;
+	SCROLLBAR-FACE-COLOR: #d9d9d9;
+	SCROLLBAR-HIGHLIGHT-COLOR: #ffffff;
+	SCROLLBAR-SHADOW-COLOR: #ffffff;
+	SCROLLBAR-3DLIGHT-COLOR: #d9d9d9;
+	SCROLLBAR-ARROW-COLOR: #cfcfcf;
+	SCROLLBAR-TRACK-COLOR: #ffffff;
+	SCROLLBAR-DARKSHADOW-COLOR: #d9d9d9;
+}
+
+
+.actInput {height:20px; font-size:8pt; cursor:hand; border:1 solid #698d38; color:#FFFFFF; background-color:<%=cfgDefColor%>; font-weight:normal; padding-top:2px;}
+.actInput_1 {height:20px; font-size:8pt; cursor:hand; border:1 solid #698d38; color:#FFFFFF; background-color:green; font-weight:normal; padding-top:2px;}
+.actInput_2 {height:20px; font-size:8pt; cursor:hand; border:1 solid #698d38; color:#FFFFFF; background-color:red; font-weight:normal; padding-top:2px;}
+.actInput_3 {height:20px; font-size:8pt; cursor:hand; border:1 solid #698d38; color:#FFFFFF; background-color:#ff6600; font-weight:normal; padding-top:2px;}
+
+
+
+
+
+A:link {
+	COLOR: #333333; FONT-STYLE: normal; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #333333; FONT-STYLE: normal; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #1a66a6; FONT-STYLE: normal; TEXT-DECORATION: underline
+}
+A:active {
+	COLOR: #333333; FONT-STYLE: normal; TEXT-DECORATION: none
+}
+
+A.link1:link {
+	font-size: 11px; color: #333333; letter-spacing: -1px; text-decoration: none;
+}
+A.link1:visited {
+	font-size: 11px; color: #333333; letter-spacing: -1px; text-decoration: none;
+}
+A.link1:hover {
+	font-size: 11px; color: #1a66a6; letter-spacing: -1px; text-decoration: underline;
+}
+A.link1:active {
+	font-size: 11px; COLOR: #333333; letter-spacing: -1px; text-decoration: none;
+}
+
+A.link2:link {
+	color: #80dfff; font-weight: bold; letter-spacing: -1px; text-decoration: none;
+}
+A.link2:visited {
+	color: #80dfff; font-weight: bold; letter-spacing: -1px; text-decoration: none;
+}
+A.link2:hover {
+	color: #FFFF99; font-weight: bold; letter-spacing: -1px; text-decoration: underline;
+}
+A.link2:active {
+	COLOR: #80dfff; font-weight: bold; letter-spacing: -1px; text-decoration: none;
+}
+
+A.link3:link {
+	font-size: 11px; color: #FFFFFF; letter-spacing: -1px; text-decoration: none;
+}
+A.link3:visited {
+	font-size: 11px; color: #FFFF99; letter-spacing: -1px; text-decoration: none;
+}
+A.link3:hover {
+	font-size: 11px; color: #FFFF99; letter-spacing: -1px; text-decoration: underline;
+}
+A.link3:active {
+	font-size: 11px; COLOR: #FFFFFF; letter-spacing: -1px; text-decoration: none;
+}
+
+A.link4:link {
+	font-size: 11px; color: #1a66a6; text-decoration: none;
+}
+A.link4:visited {
+	font-size: 11px; color: #1a66a6; text-decoration: none;
+}
+A.link4:hover {
+	font-size: 11px; color: #1a66a6; text-decoration: underline;
+}
+A.link4:active {
+	font-size: 11px; COLOR: #1a66a6; text-decoration: none;
+}
+
+A.link5:link {
+	font-size: 11px; color: #333333; letter-spacing: -1px; text-decoration: none;
+}
+A.link5:visited {
+	font-size: 11px; color: #333333; letter-spacing: -1px; text-decoration: none;
+}
+A.link5:hover {
+	font-size: 11px; color: #1a66a6; letter-spacing: -1px; text-decoration: underline;
+}
+A.link5:active {
+	font-size: 11px; COLOR: #ff6600; letter-spacing: -1px; text-decoration: none;
+}
+
+A.link-email:link {
+	font-size: 12px; color: #1a66a6; text-decoration: underline;
+}
+A.link-email:visited {
+	font-size: 12px; color: #1a66a6; text-decoration: underline;
+}
+A.link-email:hover {
+	font-size: 12px; color: #1a66a6; text-decoration: underline;
+}
+A.link-email:active {
+	font-size: 12px; COLOR: #ff6600; text-decoration: underline;
+}
+
+.table1 {FONT-WEIGHT: bold; COLOR: #205B7B; background-color: #E9F2F5; padding-top: 2px; LINE-HEIGHT: 14px; padding-right: 10px; padding-bottom: 1px; padding-left: 10px;}
+.table2 {background-color: #FFFFFF; LINE-HEIGHT: 14px; padding-top: 2px; padding-right: 10px; padding-bottom: 1px; padding-left: 10px;}
+.table3 {FONT-WEIGHT: bold; COLOR: #5A5A5A; background-color: #DFDFDF; LINE-HEIGHT: 14px; padding-top: 2px; padding-right: 10px; padding-bottom: 1px; padding-left: 10px;}
+.table4 {font-size: 11px; letter-spacing: -1px; COLOR: #205B7B; background-color: #EAEBE2; LINE-HEIGHT: 14px; padding-top: 2px; padding-right: 5px; padding-bottom: 2px; padding-left: 5px;}
+.table4_1 {font-size: 11px; FONT-WEIGHT: bold; letter-spacing: -1px; COLOR: #205B7B; background-color: #E9F2F5; LINE-HEIGHT: 14px; padding-top: 2px; padding-right: 5px; padding-bottom: 2px; padding-left: 5px;}
+.table5 {font-size: 11px; letter-spacing: -1px; background-color: #FFFFFF; LINE-HEIGHT: 14px; padding-top: 2px; padding-right: 5px; padding-bottom: 2px; padding-left: 5px;}
+.table6 {font-size: 11px; FONT-WEIGHT: bold; letter-spacing: -1px; COLOR: #5A5A5A; background-color: #DFDFDF; padding-top: 2px; padding-right: 5px; padding-bottom: 2px; padding-left: 5px;}
+.table7 {font-size: 11px; letter-spacing: -1px; background-color: #FFFFFF; LINE-HEIGHT: 14px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 1px;}
+
+.list1 {
+	line-height: 20px; list-style-image: url(/images/icon.gif);
+}
+
+.input {
+  font-family: 'Nanum Gothic','Cabin','arial','simsun','MS PGothic', 'MS UI GOTHIC', 'Malgun Gothic','ÎßëÏùÄÍ≥†Îîï';
+	font-size: 12px; 
+	background:#fff;
+	color: #2f2f2f;
+	margin: 0px; 
+	border: 1px solid #cfcfcf; 
+	
+	text-decoration: none; 
+	font-weight: normal; 
+	height:17px;
+  letter-spacing: -1px;
+}
+
+  
+
+.inputins {font-size: 9pt; color: #000000; letter-spacing: -1px; background-color: #fff600; margin: 0px; padding-top: 2px; border: 1px solid #cfcfcf; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; text-decoration: none; font-weight: normal;
+}
+
+.input1 {font-size: 11px; color: #FFFFFF; letter-spacing: -1px; background-color: #9B9B9B; margin: 0px; padding-top: 2px; border: 1px solid #cfcfcf; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; text-decoration: none; font-weight: normal;
+}
+.abs_input {font-size: 11px; color: #333333; background-color: #F7F7F7; margin: 0px; padding-top: 2px; border: 1px solid #cfcfcf; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; text-decoration: none; font-weight: normal;
+}
+
+.padding { padding-left: 15px; padding-right: 15px; 
+}
+.padding01 { padding-left: 10px; padding-right: 10px; 
+}
+
+.k_txt{
+	font-family: µ∏¿Ω;
+}
+.menu_txt {
+	COLOR: #80dfff; font-weight: bold; letter-spacing: -1px;
+}
+.sub_title {
+	COLOR: #01AFAB; font-weight: bold; letter-spacing: -1px;
+}
+.sub_title01 {
+	font-size: 14px; COLOR: #459fc4; font-weight: bold; letter-spacing: -1px;
+}
+.sub_title02 {
+	COLOR: #69A800; font-weight: bold; letter-spacing: -1px;
+}
+.sub_title03 {
+	font-size: 14px; COLOR: #FFFFFF; font-weight: bold; letter-spacing: -1px;
+}
+.sub_title04 {
+	COLOR: #459fc4; font-weight: bold; letter-spacing: -1px;
+}
+.sub_title05 {
+	COLOR: #993333; font-weight: bold; letter-spacing: -1px;
+}
+.b_txt {
+	font-size: 13px; COLOR: #80DFFF; font-weight: bold; letter-spacing: -1px;
+}
+.txt10 {
+	font-size: 10px; letter-spacing: -1px; LINE-HEIGHT: 14px;
+}
+.w_txt {
+	COLOR: #FFFFFF; letter-spacing: -1px;
+}
+.sub_txt {
+	COLOR: #333333;
+}
+.letter-spacing01 {
+	letter-spacing: -1px;
+}
+.red_txt {
+	COLOR: #F40000;
+}
+.red_txt01 {
+	font-size: 11px; COLOR: #F40000; LINE-HEIGHT: 16px;
+}
+.yellow_txt {
+	font-size: 11px; COLOR: #FFFF00;
+}
+.green_txt {
+	COLOR: #549900;
+}
+.bold_txt {
+	FONT-WEIGHT: bold; color: #333333;
+}
+.bold_txt01 {
+	font-family: Verdana, µ∏¿Ω; font-size: 11px; FONT-WEIGHT: bold; color: #333333; letter-spacing: -1px;
+}
+.txt11 {
+	font-family: µ∏¿Ω, Verdana; FONT-SIZE: 11px; COLOR: #333333; line-height: 14px;
+}
+
+
+
+table.table_3 {
+	clear:both;
+	font-size:12px;
+	border-collapse:collapse;
+	border-top:2px solid #4499fa;
+	margin-bottom:20px;
+	
+}
+
+table.table_3 tr td {
+	border-collapse:collapse;
+	
+  height:25px;
+	color:#333333;
+  padding:0px 5px 0px 5px;
+	border-bottom:1px solid #e2e2e2;
+	
+	border-right:1px solid #e2e2e2;
+	border-left:1px solid #e2e2e2;
+	border-top:1px solid #e2e2e2;
+}
+
+table.table_3 th {
+	height:25px;
+	padding:3px 0px 3px 0px;
+	background:#f6fdff;
+	color:#333333;
+  
+	border-bottom:1px solid #e2e2e2;
+	border-right:1px solid #e2e2e2;
+	border-left:1px solid #e2e2e2;
+	border-top:1px solid #e2e2e2;
+}
+
+
+table.table_7 {
+	clear:both;
+	font-size:12px;
+	border-collapse:collapse;
+	border-top:2px solid #4499fa;
+	margin-bottom:10px;
+	
+}
+
+table.table_7 tr td {
+	border-collapse:collapse;
+	padding:0px 8px 0px 8px;
+
+
+	border-bottom:1px solid #e2e2e2;
+	
+	border-right:1px solid #e2e2e2;
+	border-left:1px solid #e2e2e2;
+	border-top:1px solid #e2e2e2;
+}
+
+table.table_7 th {
+	
+	padding:0px 0px 0px 0px;
+	background:#f6fdff;
+
+
+	border-bottom:1px solid #e2e2e2;
+	border-right:1px solid #e2e2e2;
+	border-left:1px solid #e2e2e2;
+	border-top:1px solid #e2e2e2;
+}
